@@ -29,7 +29,10 @@ Resources:
   WebServerInstance:
     Type: AWS::EC2::Instance
     Properties:
+      NetworkInterfaces: 
+        - AssociatePublicIpAddress: 'false'
+          DeviceIndex: "0"  
       # Use !Ref function in ImageId property
-      ImageId: ami-00a1270ce1e007c27
+      ImageId: ami-0633fb238d7de0f95
       InstanceType: !Ref InstanceType
       # Add Tags property here
